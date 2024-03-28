@@ -116,7 +116,7 @@ export default function City() {
           <input
           type="text"
           placeholder="Any Valid City Name"
-          style={{ width: "30vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
+          style={{ width: "auto",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCity(event.target.value);
           }}
@@ -124,7 +124,7 @@ export default function City() {
         <input
           type="text"
           placeholder="Country Of that City in two letter Abrreviation form"
-          style={{ width: "50vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
+          style={{ width: "auto",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCountryCode(event.target.value);
           }}
