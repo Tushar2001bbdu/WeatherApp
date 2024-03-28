@@ -68,13 +68,14 @@ export default function WeatherCard(props) {
             <div className="row">
               <div class="card-title">
                 <h1>
-                  
                   {Math.round(props.element.list[props.index].main.temp - 273)}
                   °C,{props.city},{props.cc}
                 </h1>
               </div>
               <div className="card-text" style={{ color: "orange" }}>
-                <h3>{props.element.list[props.index].weather[0].description}</h3>
+                <h3>
+                  {props.element.list[props.index].weather[0].description}
+                </h3>
               </div>
               <div className="card-text">
                 <h6>
@@ -130,7 +131,9 @@ export default function WeatherCard(props) {
                     Visibilty
                   </div>
                   <div className="card-text">
-                    <h3>{props.element.list[props.index].visibility/1000} km</h3>
+                    <h3>
+                      {props.element.list[props.index].visibility / 1000} km
+                    </h3>
                   </div>
                 </div>
                 <div className="col" style={{ width: "50%" }}>

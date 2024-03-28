@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
 import Inavlid from "./Inavlid";
-
 export default function City() {
   const [city, setCity] = useState("");
   const [countrycode, setCountryCode] = useState("");
@@ -14,8 +13,8 @@ export default function City() {
   const [weatherdata, setWeatherData] = useState(null);
   let parsedData=""
   let s=null
-  let API_KEY = "fdd32a2da58bd4dacd66dff0fbacefe9";
-  
+  let API_KEY = "b9adfbd48b32de9dba928a2714eccf25";
+  console.log(API_KEY)
   
   useEffect(() => {
     if (count === 1) {
