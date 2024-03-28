@@ -74,7 +74,7 @@ export default function City() {
   function getData() {
     if (weatherdata != null && articles!=null) {
       let icon = weatherdata.list[index].weather[0].icon;
-      let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+      let iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
       try{
       if (count == 1) {
         return (
