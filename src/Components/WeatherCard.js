@@ -68,9 +68,9 @@ export default function WeatherCard(props) {
             <div className="row">
               <div class="card-title">
                 <h1>
-                  {" "}
+                  
                   {Math.round(props.element.list[props.index].main.temp - 273)}
-                  °,{props.city},{props.cc}
+                  °C,{props.city},{props.cc}
                 </h1>
               </div>
               <div className="card-text" style={{ color: "orange" }}>
@@ -87,12 +87,12 @@ export default function WeatherCard(props) {
                   {Math.round(
                     props.element.list[props.index].main.temp_min - 273
                   )}
-                  °/
+                  °C/
                   {Math.round(
                     props.element.list[props.index].main.temp_max - 273
                   )}
-                  ° Feels like{" "}
-                  {Math.round(props.element.list[0].main.feels_like - 273)}°
+                  °C Feels like{" "}
+                  {Math.round(props.element.list[0].main.feels_like - 273)}°C
                 </h6>
               </div>
             </div>

@@ -5,7 +5,7 @@ import Inavlid from "./Inavlid";
 export default function City() {
   const [city, setCity] = useState("");
   const [countrycode, setCountryCode] = useState("");
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(-8);
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [index, setIndex] = useState(0);
@@ -13,6 +13,7 @@ export default function City() {
   const [articles, setArticles] = useState(null);
   const [weatherdata, setWeatherData] = useState(null);
   let parsedData=""
+  let s=null
   let API_KEY = "fdd32a2da58bd4dacd66dff0fbacefe9";
   
   
@@ -25,7 +26,7 @@ export default function City() {
         let DATA = await data.json();
         setWeatherData(DATA);}
         catch(error){
-          setCount(0)
+          setCount(-1)
         }
       };
       fetchData();
@@ -40,7 +41,7 @@ export default function City() {
 
     setArticles(parsedData);}
     catch(error){
-      setCount(0)
+      setCount(-1)
     }
     
       }
@@ -48,7 +49,7 @@ export default function City() {
   
   useEffect(()=>{
     if(city.length==0 || countrycode.length==0){
-      setCount(0);
+     setCount(-1) 
     }
     else{
     let f=0
@@ -92,7 +93,7 @@ export default function City() {
           />
         );}}
         catch(error){
-          setCount(0)
+          setCount(-1)
         }
       }
     }
@@ -109,10 +110,13 @@ export default function City() {
           marginTop: "2%",
         }}
       >
-        <input
+
+        <div className="idea" style={{display:'flex',flexDirection:"column",width:"80vw"}}>
+          <div className="input-fields" style={{display:'flex',flexDirection:"row",width:"80vw"}}>
+          <input
           type="text"
           placeholder="Any Valid City Name"
-          style={{ width: "15vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
+          style={{ width: "30vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCity(event.target.value);
           }}
@@ -120,16 +124,24 @@ export default function City() {
         <input
           type="text"
           placeholder="Country Of that City in two letter Abrreviation form"
-          style={{ width: "85vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
+          style={{ width: "50vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCountryCode(event.target.value);
           }}
         />
-        <button type="button" className="btn btn-primary" style={{borderRadius:"4vw"}} onClick={()=>{getDetails();}}>
+          </div>
+          <div className="next" style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"80vw"}}>
+        <button type="button" className="btn btn-primary" style={{borderRadius:"4vw"}} onClick={()=>{getDetails();s="ABC"}}>
         Click Me To Get Details
         </button>
+        </div>
+        </div>
+        
+
+       
+        
       </div>
-      {count===0 && <Inavlid/>}
+      {(count===-1 || count===0)&& <Inavlid/>}
       {weatherdata != null && count === 1  && getData()}
    
     </div>
