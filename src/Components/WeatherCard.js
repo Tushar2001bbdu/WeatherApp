@@ -130,7 +130,7 @@ export default function WeatherCard(props) {
                     Visibilty
                   </div>
                   <div className="card-text">
-                    <h3>{props.element.list[props.index].visibility}</h3>
+                    <h3>{props.element.list[props.index].visibility/1000} km</h3>
                   </div>
                 </div>
                 <div className="col" style={{ width: "50%" }}>
