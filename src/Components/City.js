@@ -112,7 +112,7 @@ export default function City() {
       >
 
         <div className="idea" style={{display:'flex',flexDirection:"column",width:"80vw"}}>
-          <div className="input-fields" style={{display:'flex',flexDirection:"row",width:"80vw"}}>
+          <div className="input-fields" style={{display:'flex',flexDirection:"column",width:"80vw"}}>
           <input
           type="text"
           placeholder="Any Valid City Name"
