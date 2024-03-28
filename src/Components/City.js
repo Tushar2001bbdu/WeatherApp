@@ -9,10 +9,13 @@ export default function City() {
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [index, setIndex] = useState(0);
+  
   const [articles, setArticles] = useState(null);
   const [weatherdata, setWeatherData] = useState(null);
   let parsedData=""
   let API_KEY = "fdd32a2da58bd4dacd66dff0fbacefe9";
+  
+  
   useEffect(() => {
     if (count === 1) {
       const fetchData = async () => {
@@ -109,7 +112,7 @@ export default function City() {
         <input
           type="text"
           placeholder="Any Valid City Name"
-          style={{ width: "15vw" }}
+          style={{ width: "15vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCity(event.target.value);
           }}
@@ -117,17 +120,17 @@ export default function City() {
         <input
           type="text"
           placeholder="Country Of that City in two letter Abrreviation form"
-          style={{ width: "85vw" }}
+          style={{ width: "85vw",margin:"2vw",borderRadius:"4vw",height:"6vh" }}
           onChange={(event) => {
             setCountryCode(event.target.value);
           }}
         />
-        <button type="button" className="btn btn-primary" onClick={getDetails}>
+        <button type="button" className="btn btn-primary" style={{borderRadius:"4vw"}} onClick={()=>{getDetails();}}>
         Click Me To Get Details
         </button>
       </div>
       {count===0 && <Inavlid/>}
-      {weatherdata != null && count === 1 && getData()}
+      {weatherdata != null && count === 1  && getData()}
    
     </div>
   );
