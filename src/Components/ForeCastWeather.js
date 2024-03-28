@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ForeCastWeather(props) {
   let icon = props.element.weather[0].icon;
-  let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+  let iconurl = "https://openweathermap.org/img/w/" + icon + ".png";
   let dt = new Date(props.element.dt_txt);
 
   const days = [
